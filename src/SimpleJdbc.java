@@ -27,6 +27,11 @@ public class SimpleJdbc {
             System.out.print("Hvilket land vil du se oplysninger om? ±");
             landeNavn = scanner.nextLine();
 
+            if (landeNavn.equalsIgnoreCase("exit")) {
+                System.out.println("Farvel!");
+                break;
+            }
+
             String mitQuery = "SELECT * FROM world.country WHERE name LIKE  '" + landeNavn + "';";
 
 
